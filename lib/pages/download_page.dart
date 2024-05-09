@@ -185,22 +185,32 @@ class MyDownloadingSection extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(width: 10),
-                            const Icon(
-                              Icons.pause_circle_outline,
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.pause_circle_outline),
                               color: Colors.grey,
                             ),
                             PopupMenuButton(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
                               itemBuilder: (BuildContext context) {
                                 return [
                                   const PopupMenuItem(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 20),
                                     value: 1,
                                     child: Text('Re Download'),
                                   ),
                                   const PopupMenuItem(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 20),
                                     value: 2,
                                     child: Text('Details'),
                                   ),
                                   const PopupMenuItem(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 20),
                                     value: 3,
                                     child: Text("Delete"),
                                   ),
@@ -210,8 +220,11 @@ class MyDownloadingSection extends StatelessWidget {
                                 print('Selected: $value');
                               },
                               offset: const Offset(0, 50),
-                              iconColor: Colors.grey,
-                              iconSize: 20,
+                              child: Icon(
+                                CupertinoIcons.ellipsis_vertical,
+                                size: 20,
+                                color: Colors.grey,
+                              ),
                             ),
                           ],
                         ),
